@@ -34,7 +34,7 @@ class FrequentlyAskedQuestion(models.Model):
   def __str__(self):
       return self.question
 
-class Testimonial(models.Model):
+class TestimonialReview(models.Model):
     user_image = models.CharField(max_length=200)
     stars_count =[
        (1,'one'),

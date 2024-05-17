@@ -38,17 +38,17 @@
 
     <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
       <div class="swiper-wrapper">
-    {% for testimonial in testimonials %}
+    {% for testimonialreview in testimonialreview %}
         <div class="swiper-slide">
           <div class="testimonial-wrap">
             <div class="testimonial-item">
               <div class="d-flex align-items-center">
-                <img src="{% static  Testimonials.user_image %}" class="testimonial-img flex-shrink-0" alt="">
+                <img src="{% static  TestimonialReview.user_image %}" class="testimonial-img flex-shrink-0" alt="">
                 <div>
-                  <h3>{{Testimonial.username}}</h3>
-                  <h4>{{Testimonial.user_job_title}}</h4>
+                  <h3>{{TestimonialReview.username}}</h3>
+                  <h4>{{TestimonialReview.user_job_title}}</h4>
                   <div class="stars">
-                    {% for i in 'x' | ljust:Testimonial.rating_count %}
+                    {% for i in 'x' | ljust:TestimonialReview.rating_count %}
                     <i class ="bi bi-star-fill"></i>
                     {% endfor %}
                      </div>
@@ -56,7 +56,7 @@
               </div>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                {{Testimonials.review}}
+                {{TestimonialReview.review}}
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>

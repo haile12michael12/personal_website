@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from personal.models import GeneralInfo,Service,FrequentlyAskedQuestion
+from personal.models import GeneralInfo,Service,FrequentlyAskedQuestion,TestimonialReview
 from django.db import connection
 
 
@@ -11,7 +11,7 @@ def index(request):
 
   services = Service.objects.all()
   faqs = FrequentlyAskedQuestion.objects.all()
-  testimonial =testimonial.objects.all()
+  testimonialreview =testimonialreview.objects.all()
   context = {
     "company_name" :general_info.company_name,
     "location" :general_info.location,
@@ -27,7 +27,7 @@ def index(request):
     "services":services,
     
     "faqs":faqs,
-    "testimonials":testimonial,
+    "testimonialreview":testimonialreview,
   }
   return render(request, "index.html", context)
 
@@ -35,6 +35,5 @@ def index(request):
 def contact_form(request):
    if request.method =="POST":
     print("\nuser submit contact_form\n")
-   if request.method =="GET":
-       print("\nuser submit contact_form\n")
+    print(f"request.POST : {request.POST}")
    return redirect('home')

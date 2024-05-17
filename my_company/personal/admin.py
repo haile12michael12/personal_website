@@ -3,7 +3,7 @@ from personal.models import (
  GeneralInfo, 
  Service,
  FrequentlyAskedQuestion,
- Testimonial
+ TestimonialReview
 )
 
 # Register your models here.
@@ -40,8 +40,8 @@ class FrequentlyAskedQuestionAdmin(admin.ModelAdmin):
      "answer",
 ]
 
-@admin.register(Testimonial)
-class TestimonialAdmin(admin.ModelAdmin):
+@admin.register(TestimonialReview)
+class TestimonialReviewAdmin(admin.ModelAdmin):
     list_display =[
      "username",
      "user_job_title",
